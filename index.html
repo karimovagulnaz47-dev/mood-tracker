@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трекер настроения</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>😊 Трекер настроения и эмоций</h1>
+            <p>Как вы себя чувствуете сегодня?</p>
+            
+            <div class="user-info" id="userInfo">
+                <div class="name-input" id="nameInput">
+                    <input type="text" id="userName" placeholder="Введите ваше имя" maxlength="20">
+                    <button id="saveName" class="save-name-btn">Сохранить</button>
+                </div>
+                <div class="welcome-message" id="welcomeMessage" style="display: none;">
+                    <span>Привет, <strong id="displayName"></strong>!</span>
+                    <button id="changeName" class="change-name-btn">Изменить</button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Дашборд -->
+        <div class="dashboard" id="dashboard">
+            <h2>📊 Аналитика за последние 30 дней</h2>
+            <div class="dashboard-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Настроение</h3>
+                        <div class="mood-stats" id="moodStats">
+                            <div class="stat-item">
+                                <span class="emoji">🙂</span>
+                                <span class="percentage" id="happyPercent">0%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="emoji">😌</span>
+                                <span class="percentage" id="neutralPercent">0%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="emoji">😔</span>
+                                <span class="percentage" id="sadPercent">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Топ-3 эмоции</h3>
+                        <div class="top-emotions" id="topEmotions">
+                            <p class="no-data">Недостаточно данных</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mood-selector">
+            <h3>Выберите общее настроение:</h3>
+            <div class="mood-buttons">
+                <button class="mood-btn happy" data-mood="happy" title="Счастливый">
+                    🙂
+                </button>
+                <button class="mood-btn neutral" data-mood="neutral" title="Нейтральный">
+                    😌
+                </button>
+                <button class="mood-btn sad" data-mood="sad" title="Грустный">
+                    😔
+                </button>
+            </div>
+        </div>
+        
+        <div class="emotions-selector" id="emotionsSelector" style="display: none;">
+            <h3>Какие эмоции вы испытываете?</h3>
+            <div class="emotions-grid" id="emotionsGrid">
+                <!-- Эмоции будут добавлены через JavaScript -->
+            </div>
+        </div>
+        
+        <div class="today-mood" id="todayMood">
+            <p>Выберите свое настроение на сегодня</p>
+        </div>
+        
+        <div class="history">
+            <h2>История настроений</h2>
+            <div class="history-list" id="historyList">
+                <p class="no-data">Пока нет записей</p>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button class="clear-btn" id="clearBtn">Очистить историю</button>
+        </div>
+    </div>
+    
+    <script src="analytics.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
